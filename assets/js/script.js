@@ -1,5 +1,8 @@
 var trackTitle;
 var apiKey = "62da9f2d1c46050f8935216855470f78";
+var trackContainer = document.getElementById("track-container");
+var geniusKey ="UAWrPtjnLzjX7VfKe6TdzG4bRCGgVmfPZAQ36lbOdh2D1eSkN6quQ_R050fHi3hS";
+
 
 //you get artist from user input - done 3/27
 function getArtist() {
@@ -18,20 +21,28 @@ function searchArtist(artist) {
             console.log(data) 
             var trackTitle = data.toptracks.track;
             console.log(trackTitle); // logs track title in array
+            //trackContainer.innerHTML = '';
             for (var i = 0; i < trackTitle.length; i++) {
                 console.log(trackTitle[i].name); // individual track names
             
                 var tracksTitle = trackTitle[i].name
-                // working to create cards for each indivual track
-                var tracksEl = document.getElementById("tracks");
-                var trackEL = document.createElement("div");
-                trackEL.setAttribute("class", "card card-content");
-                var trackTitleEl = document.createElement("div");
-                trackTitleEl.setAttribute("class", "media-content");
+
+                var trackCard = document.createElement("div");
+                trackCard.setAttribute("class", "card card-content")
+                //trackCard.setAttribute("id", "track-card")
+                trackContainer.append(trackCard);
+
+                var cardTitle = document.createElement("div");
+                cardTitle.setAttribute("class", "content");
+                trackCard.append(cardTitle)
+                var song = document.createElement("h3");
+                cardTitle.append(song);
+                song.innerHTML = tracksTitle;
+
                 
 
             
-                trackEL.append(tracksEl)
+                //trackEL.append(tracksEl)
             
             }
         })
