@@ -1,7 +1,7 @@
 var trackTitle;
 var apiKey = "62da9f2d1c46050f8935216855470f78";
 var trackContainer = document.getElementById("track-container");
-var geniusKey ="UAWrPtjnLzjX7VfKe6TdzG4bRCGgVmfPZAQ36lbOdh2D1eSkN6quQ_R050fHi3hS";
+var geniusKey = "UAWrPtjnLzjX7VfKe6TdzG4bRCGgVmfPZAQ36lbOdh2D1eSkN6quQ_R050fHi3hS";
 
 
 //you get artist from user input - done 3/27
@@ -18,13 +18,13 @@ function searchArtist(artist) {
     fetch(endpoint)
         .then(response => response.json())
         .then(function (data) {
-            console.log(data) 
+            console.log(data)
             var trackTitle = data.toptracks.track;
             console.log(trackTitle); // logs track title in array
             //trackContainer.innerHTML = '';
             for (var i = 0; i < trackTitle.length; i++) {
                 console.log(trackTitle[i].name); // individual track names
-            
+
                 var tracksTitle = trackTitle[i].name
 
                 var trackCard = document.createElement("div");
@@ -39,21 +39,26 @@ function searchArtist(artist) {
                 cardTitle.append(song);
                 song.innerHTML = tracksTitle;
 
-                
 
-            
+
+
                 //trackEL.append(tracksEl)
-            
+
             }
         })
 }
-
-
 
 //display artist songs
 //user clicks on song
 //Fetch lyric api
 // present user with lyrics
+
+function getLyrics() {
+    $.get("https://api.lyrics.ovh/v1/" + document.getElementById("artistLyrics").value + "/" + document.getElementById("lyricTitle").value,
+
+        function (data) { document.getElementbyId("output").innerHTML = data.lyrics })
+};
+
 
 
 
