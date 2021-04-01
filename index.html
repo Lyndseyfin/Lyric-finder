@@ -23,18 +23,23 @@
 
 <body>
     <div class="columns">
-        <div class="column">
+        <div class="column is-4 ml-4">
             <input class="input" type="text" id="search-artist" placeholder="Lady Gaga">
+        </div>
+        <div class="column is-1">
             <button class="button is-info" id="search-btn">Info</button>
         </div>
-        <div class="column" id="track-container"></div>
-        <div class="column">
+    </div>
+    <div class="columns">
+        <div class="column is-4" id="searched-songs"></div>
+        <div class="column is-4" id="track-container"></div>
+        <div class="column is-4">
             <p id="lyrics-container"></p>
         </div>
+    </div>
 
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script type="text/javascript" src="./assets/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./assets/js/script.js"></script>
 </body>
 
 </html>
