@@ -14,5 +14,3 @@ Lyrically challanged? We are here for you. As many of us can attest to, being ab
 
 #### Screenshot
 ![screenshot]
-
-
