@@ -20,6 +20,16 @@ $(document).ready(function () {
             .then(response => response.json())
             .then(function (data) {
                 console.log(data)
+                //if dot notation doesn't work, we can use square bracket notation
+                const artistData = data.toptracks['@attr'].artist;
+                const btn = document.createElement("button")
+                storeArtist(artistData)
+                btn.textContent = artistData
+                const searchSongsEl = document.getElementById('searched-songs');
+                searchSongsEl.appendChild(btn)
+
+
+
                 var trackTitle = data.toptracks.track;
                 console.log(trackTitle); // logs track title in array
                 //trackContainer.innerHTML = '';
@@ -73,6 +83,21 @@ $(document).ready(function () {
 
     }
 
+    function storeArtist(artist){
+        let artists = JSON.parse(localStorage.getItem("artists"));
+
+        if(!artists){
+            artists = []
+        }
+
+        artists.push(artist)
+
+        localStorage.setItem("artists", JSON.stringify(artists));
+    }
+
+    function getArtists(){
+
+    }
     /*function getLyrics() {
         var lyricCall = "https://api.musixmatch.com/ws/1.1/matcher.lyrics.get?format=jsonp&callback=callback&q_track=starboy&q_artist=%27the%20weeknd%27&apikey=d7dceb7b6e1e60fab8845ae1ba5d51fc"
         $.ajax(lyricCall, {
@@ -109,5 +134,6 @@ $(document).ready(function () {
     }
 
     // event listener for search - done 3/27
-    document.getElementById("search-btn").addEventListener("click", getArtist);
+    document.getElementById("search-btn").addEventListener("click", getArtist);;
+
 })
