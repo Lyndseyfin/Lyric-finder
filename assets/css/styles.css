@@ -1,33 +1,25 @@
+html {
+    height: 100%;
+}
+
 body {
-    /* height: 100vh;
-    width: 100vw;
-    background-image: url("https://icanbecreative.com/res/freeweb/2011/04/colour.png");
-    background-size:cover; */
 
-    overflow: hidden;
-
-    padding: 30px;
-    background: linear-gradient(to right, 
-                rgba(14, 236, 236, 0.65) ,
-                rgba(153, 116, 73, 0.548)),
-                url("https://wallpapercave.com/wp/wp5495128.jpg");
-    height: 100vh;
-    width: 100vw;
-    border: none;
-    background-repeat: no-repeat;
+    min-height: 100%;
+    background:
+    url("https://www.pixelstalk.net/wp-content/uploads/2016/06/HD-Minimalist-Background.jpg");
+    border: none; 
     background-position: center;
     background-size: cover;
-    position: relative;
-    /* clip-path: polygon(2% 11%, 3% 7%, 96% 16%, 96% 27%, 91% 79%, 10% 93%, 8% 89%); */
     position: relative;
 
 }
 
 .title {
     text-align: center;
-    font-size: 30px;
+    font-size: 36px;
     color:black;
     font-weight: bolder;
+    font-family: monospace;
 }
 
 .subtitle {
@@ -38,6 +30,13 @@ body {
 
  .is-info { 
     font-size: 15px;
+}
+
+.display {
+    font-size: 16px;
+    font-weight: bolder;
+    justify-content: top, center;
+    color: black;
 }
 
 @media (max-width:901px) {
