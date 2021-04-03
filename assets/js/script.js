@@ -14,7 +14,7 @@ $(document).ready(function () {
 
     // Fetch Artist Songs w/ API - done 3/27
     function searchArtist(artist) {
-        var endpoint = `http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=${artist}&api_key=62da9f2d1c46050f8935216855470f78&format=json`
+        var endpoint = `https://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=${artist}&api_key=62da9f2d1c46050f8935216855470f78&format=json`
         fetch(endpoint)
             .then(response => response.json())
             .then(function (data) {
